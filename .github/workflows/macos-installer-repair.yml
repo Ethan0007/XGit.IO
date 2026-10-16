@@ -57,7 +57,10 @@ jobs:
           while IFS= read -r -d '' item; do
             if file -b "$item" | grep -q 'Mach-O'; then
               case "$item" in
-                "$app/Contents/MacOS/XGit.IO"|"$app/Contents/MacOS/Agent/XGit.Agent"|"$app/Contents/MacOS/Relay/XGit.Relay")
+                "$app/Contents/MacOS/XGit.IO")
+                  # The main executable must be signed through its bundle so resources are sealed.
+                  continue ;;
+                "$app/Contents/MacOS/Agent/XGit.Agent"|"$app/Contents/MacOS/Relay/XGit.Relay")
                   codesign "${options[@]}" --entitlements "$entitlements" "$item" ;;
                 *) codesign "${options[@]}" "$item" ;;
               esac
