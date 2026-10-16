@@ -22,7 +22,7 @@ The owner chooses how teammates connect: on a local network, through an SSH tunn
 
 Both downloads are in the [v0.1.0-beta release](https://github.com/Ethan0007/XGit.IO/releases/tag/v0.1.0-beta), along with SHA-256 checksums. Install Git on every computer that will work with repositories. Docker with a running Linux engine is needed only on computers that run build and test workflows. Azure CLI and deployment access are needed on the owner host when Azure deployment is configured.
 
-These beta installers are unsigned. The Apple Silicon DMG was structurally checked, but it still needs a launch test on a Mac. Keep a separate backup of important repositories and [read the current limits](#security-and-current-limits) before using the beta for critical work.
+These beta installers are unsigned. Keep a separate backup of important repositories and [read the current limits](#security-and-current-limits) before using the beta for critical work.
 
 ## See a team project move
 
@@ -92,7 +92,7 @@ Azure targets and credentials stay on the owner host. The owner decides whether 
 - A shared Git repository includes its committed history, including files deleted in later commits. Review tracked files and history before inviting people. Local uncommitted work stays local unless a user enables the separate working-change preview.
 - A replica holds only commits it has confirmed. A revocation made just before an outage may not reach it immediately; an existing access ticket can remain usable for up to 24 hours.
 - Pushes and project management need the owner host. There is no automatic write failover or offline push queue.
-- The Windows installer is unsigned. The macOS DMG is unsigned and has not yet been launch-tested on a Mac. Operating-system security prompts may appear.
+- The Windows installer and macOS DMG are unsigned. Operating-system security prompts may appear.
 
 The architecture diagrams describe roles and connections; they contain no live credentials. Keep owner tokens, member tokens, relay keys, and private SSH keys out of public issues and screenshots. For security reports, contact [dev@xgit.io](mailto:dev@xgit.io).
 
