@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title description">
+  <title id="title">XGit.IO application architecture</title>
+  <desc id="description">The owner computer runs the desktop app and local agent, which owns Git repositories and SQLite metadata. A member computer runs its own desktop app and agent with a local clone. Network access connects the two agents.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#72a8ff" stroke-width="1.8"/></marker>
+  </defs>
+  <rect width="1200" height="450" rx="20" fill="#111a25"/>
+  <text x="32" y="47" fill="#f6f9ff" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700">XGit.IO application architecture</text>
+  <text x="32" y="72" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="15">The owner host is the source of truth; each member keeps a separate local working copy.</text>
+
+  <rect x="30" y="96" width="570" height="313" rx="18" fill="#1b2938" stroke="#33506c" stroke-width="2"/>
+  <text x="53" y="128" fill="#9ac0ff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">OWNER COMPUTER</text>
+  <rect x="54" y="148" width="211" height="77" rx="12" fill="#283b51" stroke="#537498"/>
+  <text x="72" y="178" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">XGit.IO desktop</text>
+  <text x="72" y="203" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Workbench · Team · Pipelines</text>
+  <rect x="322" y="148" width="249" height="77" rx="12" fill="#24415a" stroke="#5a9ed9"/>
+  <text x="340" y="178" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">XGit.Agent</text>
+  <text x="340" y="203" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Local API · Git/team HTTPS</text>
+  <path d="M271 186 H314" stroke="#72a8ff" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="271" y="142" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="12">loopback</text>
+
+  <rect x="54" y="282" width="211" height="84" rx="12" fill="#243444" stroke="#4b6680"/>
+  <text x="72" y="314" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Workflow runner</text>
+  <text x="72" y="338" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Docker build and test</text>
+  <rect x="322" y="282" width="115" height="84" rx="12" fill="#243444" stroke="#4b6680"/>
+  <text x="339" y="312" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">SQLite</text>
+  <text x="339" y="337" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="13">roles · board</text>
+  <rect x="453" y="282" width="118" height="84" rx="12" fill="#243444" stroke="#4b6680"/>
+  <text x="469" y="312" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">Bare Git</text>
+  <text x="469" y="337" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="13">commits</text>
+  <path d="M446 226 V251 H379 V276" fill="none" stroke="#637f99" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M446 251 H512 V276" fill="none" stroke="#637f99" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M315 218 H291 V324 H273" fill="none" stroke="#637f99" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="52" y="393" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Published commits and project settings live here.</text>
+
+  <rect x="632" y="96" width="538" height="313" rx="18" fill="#1b2938" stroke="#33506c" stroke-width="2"/>
+  <text x="655" y="128" fill="#9ac0ff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">MEMBER COMPUTER</text>
+  <rect x="656" y="148" width="211" height="77" rx="12" fill="#283b51" stroke="#537498"/>
+  <text x="674" y="178" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">XGit.IO desktop</text>
+  <text x="674" y="203" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">History · Changes · Team</text>
+  <rect x="923" y="148" width="220" height="77" rx="12" fill="#24415a" stroke="#5a9ed9"/>
+  <text x="941" y="178" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Local agent</text>
+  <text x="941" y="203" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Token · Git operations</text>
+  <path d="M873 186 H915" stroke="#72a8ff" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="656" y="282" width="211" height="84" rx="12" fill="#243444" stroke="#4b6680"/>
+  <text x="674" y="314" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Local clone</text>
+  <text x="674" y="338" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Working files and branches</text>
+  <rect x="923" y="282" width="220" height="84" rx="12" fill="#263c38" stroke="#63a996"/>
+  <text x="941" y="314" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Network access</text>
+  <text x="941" y="338" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">LAN · SSH · Relay</text>
+  <path d="M762 226 V276" stroke="#637f99" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M1033 226 V276" stroke="#63a996" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="656" y="393" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Changes stay local until a permitted push reaches the owner.</text>
+</svg>
