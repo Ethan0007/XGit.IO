@@ -1,0 +1,40 @@
+XGit.IO TERMS AND CONDITIONS
+Effective 16 October 2026
+Provider: XGit.IO, Philippines
+Contact: dev@xgit.io
+
+1. Agreement and eligibility
+By selecting “I agree to the Terms and Conditions” and continuing, you accept these terms for your use of the XGit.IO desktop application and its bundled agent and relay software (the “Software”). If you do not agree, select Cancel and do not use the Software. You must be legally able to enter this agreement and have authority to use any computer, repository, network, cloud account, or team workspace you connect.
+
+2. What the Software does
+XGit.IO is a Git workbench with optional local project hosting, team sharing, SSH and relay connectivity, and build and deployment features. A project owner or administrator chooses the host, members, permissions, repositories, workflow definitions, and cloud targets. The Software may run Git operations, Docker builds, scripts defined by supported workflows, and deployments you or an authorized team member initiate or enable. Review the operation and its target before proceeding.
+
+3. Your responsibilities
+You are responsible for your repositories, source code, files, backups, invitations, access roles, SSH keys, member tokens, host security, firewall rules, cloud credentials, deployment settings, and the conduct of people you authorize. Keep separate backups of important work. Check what a repository and its history contain before sharing access. Do not use the Software to access systems or data without permission, distribute malware, infringe rights, or violate applicable law. A project owner is responsible for giving appropriate notices and obtaining any required authorization from team members whose information or work is processed on the owner’s host or relay.
+
+4. Free use and third-party services
+XGit.IO is free to download and use for individuals, teams, and businesses. No purchase or subscription is required.
+
+You may download, install, and run official XGit.IO releases on computers you are authorized to use for personal, educational, and business purposes, including making installation copies within your organization. See the free-use license at https://github.com/Ethan0007/XGit.IO/blob/main/LICENSE.txt for permissions and limits.
+
+Git hosts, Azure, Docker, SSH software, internet relays, and other services you choose are provided under their own terms and privacy practices. You are responsible for their accounts, charges, permissions, and availability. XGit.IO does not operate your chosen project host or cloud account merely because the Software connects to it. A self-hosted relay operator may be able to observe traffic that passes through that relay, including authentication data; use an operator you trust.
+
+5. Security and availability
+The Software includes access controls and other safeguards, but no software or network connection can be guaranteed secure, uninterrupted, or error-free. A lost host, misconfigured network, expired credential, offline replica, or failed build can delay or prevent work. You should test your configuration and maintain backups. Do not rely on the Software as your only copy of data or as a disaster-recovery service.
+
+6. Intellectual property
+You retain rights in content you own. You grant only the permissions needed for authorized team members and configured services to receive, store, build, and deploy content when you use those features. XGit.IO and its licensors retain their rights in the Software. This agreement does not transfer ownership of your code to XGit.IO or ownership of the Software to you. Any license supplied with a copy of the Software also applies; where it conflicts with these use terms for the licensed code, that license controls.
+
+7. Reliability and limits of responsibility
+XGit.IO is provided “as is” and “as available.” We work to make it reliable, but do not guarantee that it will always be secure, uninterrupted, or error-free. You are responsible for keeping backups, reviewing changes before publishing or deploying, and managing the access and services you connect.
+
+To the fullest extent permitted by law, XGit.IO is not responsible for losses caused by user settings, third-party services, or network failures outside its control. It is also not responsible for indirect losses, including lost profits and business interruption.
+
+8. Claims caused by your use
+To the extent permitted by law, you will defend and reimburse XGit.IO for third-party claims, losses, and reasonable costs resulting from your unlawful use of the Software, content you share without rights, or your breach of these terms. This does not apply to the extent a claim results from XGit.IO’s own wrongful conduct.
+
+9. Changes and ending use
+XGit.IO may update the Software and these terms. A material terms update will be presented for acceptance before continued use of the updated Software. You may stop using the Software at any time. Removing the app does not automatically delete repositories, host databases, cloud resources, or copies held by team members; manage those separately. Sections intended to survive, including responsibility, intellectual property, disclaimers, and liability limits, survive the end of use.
+
+10. Governing law and contact
+These terms are governed by Philippine law, subject to any mandatory law that applies to you. Disputes will be brought before courts with jurisdiction in the Philippines unless mandatory law requires otherwise. Contact dev@xgit.io with questions about these terms.

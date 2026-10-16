@@ -1,5 +1,11 @@
 # Changelog
 
+## Free-use license — October 16, 2026
+
+- XGit.IO is free to download and use for individuals, teams, and businesses. No purchase or subscription is required.
+- The license explicitly permits personal, educational, and business use of the published installers. Application source code remains private.
+- Published the Terms and Conditions and clarified that connected third-party services may have their own charges.
+
 ## macOS installer refresh — October 16, 2026
 
 - Fixed the Apple Silicon app bundle's missing resource seal and managed-DLL signing failure.

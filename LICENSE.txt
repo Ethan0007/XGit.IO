@@ -1,8 +1,26 @@
-Copyright (c) 2026 XGit.IO. All rights reserved.
+XGit.IO FREE-USE LICENSE
+Effective 16 October 2026
+Copyright (c) 2026 XGit.IO.
 
-XGit.IO, its installers, documentation, artwork, and branding are proprietary.
-Their public availability does not grant permission to modify, redistribute,
-sublicense, or create derivative works from them.
+XGit.IO is free to download and use for individuals, teams, and businesses. No purchase or subscription is required.
 
-Use of the application is governed by the Terms and Conditions presented in
-XGit.IO during first-run setup. For licensing inquiries, contact dev@xgit.io.
+You may download, install, and run official XGit.IO releases on computers you
+are authorized to use, including for personal, educational, and business
+purposes. You may make copies needed for installation within your organization.
+This permission applies to the official XGit.IO desktop application and its
+bundled agent and relay software, including the current v0.1.0-beta release.
+
+XGit.IO retains ownership of its software, documentation, artwork, and branding.
+The application source code is not published. Except for the permissions above
+and rights that applicable law requires, this license does not grant permission
+to modify, sell, publicly redistribute, sublicense, or create derivative works
+of XGit.IO. All other rights are reserved. Third-party components remain subject
+to their own licenses; this license does not restrict rights those licenses grant.
+
+Use is also subject to the Terms and Conditions in docs/TERMS.txt and presented
+in the application. If terms bundled with an earlier release conflict with the
+free-use permissions above, this license controls for those permissions.
+Services you choose to connect, such as cloud hosting or internet relays, may
+have their own charges and terms. Those costs are separate from XGit.IO.
+
+For licensing inquiries, contact dev@xgit.io.

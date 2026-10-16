@@ -3,6 +3,8 @@
 <h1 align="center">XGit.IO</h1>
 <p align="center"><strong>Your Machine. Your Team. Your Control.</strong></p>
 
+**XGit.IO is free to download and use for individuals, teams, and businesses. No purchase or subscription is required.**
+
 <p align="center">
   <img src="https://img.shields.io/badge/release-0.1.0--beta-F04452" alt="Release: 0.1.0 beta">
   <img src="https://img.shields.io/badge/desktop-Windows%20%7C%20macOS-2867D8" alt="Windows and macOS">
@@ -113,6 +115,6 @@ The architecture diagrams describe roles and connections; they contain no live c
 
 ## About this release
 
-This public repository contains documentation and installer downloads. It does not grant a source-code license. See [LICENSE.txt](LICENSE.txt) and [CHANGELOG.md](CHANGELOG.md) for rights and release notes.
+This public repository contains documentation and installer downloads. The application source code remains private. See the [free-use license](LICENSE.txt), [Terms and Conditions](docs/TERMS.txt), and [CHANGELOG.md](CHANGELOG.md). Cloud hosting and other third-party services you choose may have their own charges.
 
 Created by [Joever Monceda on LinkedIn](https://www.linkedin.com/in/joever-monceda-55242779/) · [GitHub](https://github.com/Ethan0007/)
