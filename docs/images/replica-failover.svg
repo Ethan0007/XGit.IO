@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="585" viewBox="0 0 1200 585" role="img" aria-labelledby="title description">
+  <title id="title">Verified read-only replica behavior</title>
+  <desc id="description">While the owner host is online, a Maintainer replica fetches committed Git content, verifies it, and confirms the revision. If the host goes offline, the relay sends clone and fetch requests to the verified replica. Pushes and project management wait for the owner host.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#79c6af" stroke-width="1.8"/></marker>
+    <marker id="mutedArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#86a3c2" stroke-width="1.8"/></marker>
+  </defs>
+  <rect width="1200" height="585" rx="20" fill="#111a25"/>
+  <text x="32" y="47" fill="#f6f9ff" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700">Verified read-only replica</text>
+  <text x="32" y="73" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="15">A second computer keeps a confirmed copy of committed Git data for fetches during an owner outage.</text>
+
+  <rect x="29" y="95" width="1142" height="206" rx="16" fill="#1b2938" stroke="#397864" stroke-width="2"/>
+  <rect x="47" y="111" width="148" height="29" rx="14" fill="#2b735c"/>
+  <text x="121" y="131" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">HOST ONLINE</text>
+  <rect x="50" y="163" width="260" height="89" rx="12" fill="#24415a" stroke="#5fa891"/>
+  <text x="69" y="196" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Owner host</text>
+  <text x="69" y="222" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Writable bare Git repository</text>
+  <rect x="465" y="163" width="260" height="89" rx="12" fill="#263c38" stroke="#5fa891"/>
+  <text x="484" y="196" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Internet relay</text>
+  <text x="484" y="222" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Forwards; stores no Git objects</text>
+  <rect x="880" y="163" width="270" height="89" rx="12" fill="#25433e" stroke="#5fa891"/>
+  <text x="899" y="196" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Maintainer replica</text>
+  <text x="899" y="222" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Verified bare, read-only copy</text>
+  <path d="M318 207 H457" stroke="#79c6af" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M733 207 H872" stroke="#79c6af" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="387" y="187" text-anchor="middle" fill="#9ce6c8" font-family="Segoe UI, Arial, sans-serif" font-size="13">commits</text>
+  <text x="805" y="187" text-anchor="middle" fill="#9ce6c8" font-family="Segoe UI, Arial, sans-serif" font-size="13">fetch</text>
+  <text x="48" y="280" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="14">The replica verifies and acknowledges the revision; check the confirmed replica count before relying on it.</text>
+
+  <rect x="29" y="316" width="1142" height="236" rx="16" fill="#1b2938" stroke="#556779" stroke-width="2"/>
+  <rect x="47" y="332" width="148" height="29" rx="14" fill="#4b5664"/>
+  <text x="121" y="352" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">HOST OFFLINE</text>
+  <rect x="50" y="386" width="260" height="89" rx="12" fill="#283b51" stroke="#718aa4"/>
+  <text x="69" y="419" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Other members</text>
+  <text x="69" y="445" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Clone and fetch committed Git</text>
+  <rect x="465" y="386" width="260" height="89" rx="12" fill="#263c38" stroke="#5fa891"/>
+  <text x="484" y="419" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Internet relay</text>
+  <text x="484" y="445" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Routes fetch to a live replica</text>
+  <rect x="880" y="386" width="270" height="89" rx="12" fill="#25433e" stroke="#5fa891"/>
+  <text x="899" y="419" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Maintainer replica</text>
+  <text x="899" y="445" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Serves confirmed revision only</text>
+  <path d="M318 430 H457" stroke="#86a3c2" stroke-width="3" marker-end="url(#mutedArrow)"/>
+  <path d="M733 430 H872" stroke="#86a3c2" stroke-width="3" marker-end="url(#mutedArrow)"/>
+  <text x="387" y="409" text-anchor="middle" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="13">HTTPS</text>
+  <text x="804" y="409" text-anchor="middle" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="13">fetch</text>
+  <text x="49" y="514" fill="#ffada9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Pushes, board changes, and project management wait for the owner host to return.</text>
+  <text x="49" y="537" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="13">The relay and the replica computer must stay online; replicas are not a replacement for backups.</text>
+</svg>
