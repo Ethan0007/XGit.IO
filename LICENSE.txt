@@ -1,0 +1,8 @@
+Copyright (c) 2026 XGit.IO. All rights reserved.
+
+XGit.IO, its installers, documentation, artwork, and branding are proprietary.
+Their public availability does not grant permission to modify, redistribute,
+sublicense, or create derivative works from them.
+
+Use of the application is governed by the Terms and Conditions presented in
+XGit.IO during first-run setup. For licensing inquiries, contact dev@xgit.io.
