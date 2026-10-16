@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="725" viewBox="0 0 1200 725" role="img" aria-labelledby="title description">
+  <title id="title">XGit.IO network access paths</title>
+  <desc id="description">LAN uses direct HTTPS from a member to the owner agent. SSH tunnels the same HTTPS service through the owner's SSH server. Internet relay uses member HTTPS and an outbound WebSocket opened by the owner; the relay stores no repository.</desc>
+  <defs>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#74a9ff" stroke-width="1.8"/></marker>
+    <marker id="violetArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#b69dff" stroke-width="1.8"/></marker>
+    <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#71d2ae" stroke-width="1.8"/></marker>
+  </defs>
+  <rect width="1200" height="725" rx="20" fill="#111a25"/>
+  <text x="32" y="47" fill="#f6f9ff" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700">Choose one network path</text>
+  <text x="32" y="73" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="15">Every path still checks the member's project invitation or token and role.</text>
+
+  <rect x="28" y="96" width="1144" height="177" rx="16" fill="#1b2938" stroke="#315a86" stroke-width="2"/>
+  <rect x="45" y="112" width="94" height="29" rx="14" fill="#2d5689"/>
+  <text x="92" y="132" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">LAN</text>
+  <text x="156" y="133" fill="#c8d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="15">Same local network</text>
+  <rect x="49" y="158" width="245" height="76" rx="12" fill="#283b51" stroke="#6b93bd"/>
+  <text x="68" y="188" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Member computer</text>
+  <text x="68" y="211" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">XGit.IO + local agent</text>
+  <rect x="904" y="158" width="247" height="76" rx="12" fill="#24415a" stroke="#6b93bd"/>
+  <text x="923" y="188" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Owner host agent</text>
+  <text x="923" y="211" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">HTTPS listener · port 5178</text>
+  <path d="M302 197 H896" stroke="#74a9ff" stroke-width="3" marker-end="url(#blueArrow)"/>
+  <text x="599" y="184" text-anchor="middle" fill="#9fc3ff" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Direct HTTPS</text>
+  <text x="599" y="221" text-anchor="middle" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="13">Verify the SHA-256 certificate fingerprint</text>
+  <text x="48" y="258" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="13">The host must be online and its firewall must allow the connection.</text>
+
+  <rect x="28" y="288" width="1144" height="181" rx="16" fill="#1b2938" stroke="#65578e" stroke-width="2"/>
+  <rect x="45" y="304" width="94" height="29" rx="14" fill="#57478d"/>
+  <text x="92" y="324" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">SSH</text>
+  <text x="156" y="325" fill="#c8d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="15">Encrypted tunnel to the host's HTTPS listener</text>
+  <rect x="48" y="352" width="225" height="76" rx="12" fill="#283b51" stroke="#887bbb"/>
+  <text x="65" y="382" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">Member computer</text>
+  <text x="65" y="405" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">XGit.IO + SSH client</text>
+  <rect x="344" y="352" width="224" height="76" rx="12" fill="#332e4a" stroke="#887bbb"/>
+  <text x="361" y="382" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">Local SSH tunnel</text>
+  <text x="361" y="405" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Pinned host key</text>
+  <rect x="637" y="352" width="224" height="76" rx="12" fill="#332e4a" stroke="#887bbb"/>
+  <text x="654" y="382" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">Owner OpenSSH</text>
+  <text x="654" y="405" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Default TCP port 22</text>
+  <rect x="930" y="352" width="224" height="76" rx="12" fill="#24415a" stroke="#887bbb"/>
+  <text x="947" y="382" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">Owner host agent</text>
+  <text x="947" y="405" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">HTTPS · port 5178</text>
+  <path d="M280 390 H336" stroke="#b69dff" stroke-width="3" marker-end="url(#violetArrow)"/>
+  <path d="M575 390 H629" stroke="#b69dff" stroke-width="3" marker-end="url(#violetArrow)"/>
+  <path d="M868 390 H922" stroke="#b69dff" stroke-width="3" marker-end="url(#violetArrow)"/>
+  <text x="48" y="453" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="13">SSH authenticates the tunnel; XGit.IO still authorizes the project separately.</text>
+
+  <rect x="28" y="484" width="1144" height="213" rx="16" fill="#1b2938" stroke="#397864" stroke-width="2"/>
+  <rect x="45" y="500" width="94" height="29" rx="14" fill="#2b735c"/>
+  <text x="92" y="520" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">RELAY</text>
+  <text x="156" y="521" fill="#c8d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="15">Different networks, no inbound internet port on the owner</text>
+  <rect x="49" y="550" width="246" height="78" rx="12" fill="#283b51" stroke="#5fa891"/>
+  <text x="67" y="580" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Member computer</text>
+  <text x="67" y="604" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Public HTTPS request</text>
+  <rect x="454" y="550" width="291" height="78" rx="12" fill="#263c38" stroke="#5fa891"/>
+  <text x="472" y="580" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Self-hosted relay</text>
+  <text x="472" y="604" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Forwards traffic · stores no Git data</text>
+  <rect x="906" y="550" width="245" height="78" rx="12" fill="#24415a" stroke="#5fa891"/>
+  <text x="924" y="580" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Owner host agent</text>
+  <text x="924" y="604" fill="#c1d0df" font-family="Segoe UI, Arial, sans-serif" font-size="14">Opens outbound WebSocket</text>
+  <path d="M303 589 H446" stroke="#71d2ae" stroke-width="3" marker-end="url(#greenArrow)"/>
+  <path d="M898 570 H753" stroke="#71d2ae" stroke-width="3" marker-end="url(#greenArrow)"/>
+  <path d="M753 607 H898" stroke="#71d2ae" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#greenArrow)"/>
+  <text x="827" y="548" text-anchor="middle" fill="#9ce6c8" font-family="Segoe UI, Arial, sans-serif" font-size="13">outbound WSS</text>
+  <text x="49" y="677" fill="#a9bbd0" font-family="Segoe UI, Arial, sans-serif" font-size="13">The relay needs public HTTPS. The host and relay must both be online for normal access.</text>
+</svg>
