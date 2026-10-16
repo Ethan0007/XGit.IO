@@ -33,6 +33,54 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          cat > "$RUNNER_TEMP/layout-macos-bundle.py" <<'XGIT_SCRIPT'
+          """Place managed resources and native libraries in macOS bundle directories.
+
+          Relative links retain .NET's publish-directory lookup layout. No new application
+          code or credentials are added to the bundle.
+          """
+          import os
+          import sys
+          from pathlib import Path
+
+          def layout(app):
+              app = app.resolve()
+              macos = app / 'Contents/MacOS'
+              if app.suffix != '.app' or not macos.is_dir():
+                  raise ValueError('Pass a staged .app containing Contents/MacOS.')
+              resources = app / 'Contents/Resources'
+              frameworks = app / 'Contents/Frameworks'
+              magic = {b'\xcf\xfa\xed\xfe', b'\xce\xfa\xed\xfe', b'\xfe\xed\xfa\xcf',
+                       b'\xfe\xed\xfa\xce', b'\xca\xfe\xba\xbe', b'\xbe\xba\xfe\xca'}
+              files = [p for p in macos.rglob('*') if p.is_file() and not p.is_symlink()]
+              moved = 0
+              native = 0
+              for source in files:
+                  relative = source.relative_to(macos)
+                  with source.open('rb') as stream:
+                      is_native = stream.read(4) in magic
+                  if is_native and source.suffix != '.dylib':
+                      destination = source
+                  else:
+                      destination = (frameworks if is_native else resources) / relative
+                      destination.parent.mkdir(parents=True, exist_ok=True)
+                      if destination.exists() or destination.is_symlink():
+                          raise ValueError(f'Bundle destination already exists: {relative}')
+                      source.rename(destination)
+                      source.symlink_to(os.path.relpath(destination, source.parent))
+                      moved += 1
+                  if is_native:
+                      # Maintain native lookup if the runtime resolves a managed-file link.
+                      mirror = resources / relative
+                      mirror.parent.mkdir(parents=True, exist_ok=True)
+                      if not mirror.exists() and not mirror.is_symlink():
+                          mirror.symlink_to(os.path.relpath(destination, mirror.parent))
+                      native += 1
+              print(f'Laid out {moved} resources/libraries and {native} native lookup links.')
+
+          if __name__ == '__main__':
+              layout(Path(sys.argv[1]))
+          XGIT_SCRIPT
           cat > "$RUNNER_TEMP/sign-macos-app.sh" <<'XGIT_SCRIPT'
           #!/usr/bin/env bash
           set -euo pipefail
@@ -67,7 +115,7 @@ jobs:
               codesign --verify --strict "$item"
               count=$((count + 1))
             fi
-          done < <(find "$app/Contents/MacOS" -type f -print0)
+          done < <(find "$app/Contents" -type f -print0)
           [[ "$count" -ge 3 ]] || { echo 'Missing native app binaries.' >&2; exit 1; }
           codesign "${options[@]}" --entitlements "$entitlements" "$app"
           codesign --verify --deep --strict --verbose=2 "$app"
@@ -83,6 +131,8 @@ jobs:
           </dict>
           </plist>
           XGIT_SCRIPT
+
+          python3 "$RUNNER_TEMP/layout-macos-bundle.py" "$RUNNER_TEMP/xgit-repair/XGit.IO.app"
 
           bash "$RUNNER_TEMP/sign-macos-app.sh" "$RUNNER_TEMP/xgit-repair/XGit.IO.app" - "$RUNNER_TEMP/macos-entitlements.plist"
       - name: Create a native compressed HFS+ DMG
@@ -121,7 +171,7 @@ jobs:
             if file -b "$item" | grep -q 'Mach-O'; then
               codesign --verify --strict "$item"
             fi
-          done < <(find "$app/Contents/MacOS" -type f -print0)
+          done < <(find "$app/Contents" -type f -print0)
           codesign --verify --deep --strict --verbose=2 "$app"
           echo "PASS: $rid app structure, executable permissions, and native code signatures."
           XGIT_SCRIPT
@@ -263,7 +313,7 @@ jobs:
             if file -b "$item" | grep -q 'Mach-O'; then
               codesign --verify --strict "$item"
             fi
-          done < <(find "$app/Contents/MacOS" -type f -print0)
+          done < <(find "$app/Contents" -type f -print0)
           codesign --verify --deep --strict --verbose=2 "$app"
           echo "PASS: $rid app structure, executable permissions, and native code signatures."
           XGIT_SCRIPT
