@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title description">
+  <title id="title">XGit.IO team sharing architecture</title>
+  <desc id="description">An owner computer holds the writable hosted Git repository and project settings. A member computer holds an editable local clone. An optional replica computer holds a verified read-only copy of committed Git history. An optional self-hosted internet relay forwards connections. LAN and SSH can connect a member directly to the owner. When the owner is offline, the relay can route clone and fetch to a connected replica, but pushes wait for the owner.</desc>
+  <defs>
+    <style>
+      text { font-family: Segoe UI, Arial, sans-serif; }
+      .kicker { fill: #58708c; font-size: 15px; font-weight: 700; letter-spacing: 1.2px; }
+      .title { fill: #172a44; font-size: 30px; font-weight: 700; }
+      .subtitle { fill: #53677d; font-size: 17px; }
+      .cardtitle { fill: #172a44; font-size: 24px; font-weight: 700; }
+      .body { fill: #53677d; font-size: 16px; }
+      .pill { fill: #203752; font-size: 14px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="26" fill="#f7f9fc"/>
+  <rect x="1" y="1" width="1198" height="758" rx="25" fill="none" stroke="#dce4ef" stroke-width="2"/>
+  <text x="50" y="51" class="kicker">XGIT.IO · PROJECT SHARING</text>
+  <text x="50" y="93" class="title">One owner host. Local work for every member.</text>
+  <text x="50" y="121" class="subtitle">Choose a direct connection or an optional internet relay; keep verified committed history available with a replica.</text>
+
+  <path d="M550 254 L220 290" fill="none" stroke="#92a9ca" stroke-width="2.5" stroke-dasharray="8 8"/>
+  <path d="M600 254 V290" fill="none" stroke="#92a9ca" stroke-width="2.5" stroke-dasharray="8 8"/>
+  <path d="M650 254 L980 290" fill="none" stroke="#92a9ca" stroke-width="2.5" stroke-dasharray="8 8"/>
+
+  <rect x="395" y="145" width="410" height="109" rx="19" fill="#e6eefc" stroke="#326fe5" stroke-width="2.5"/>
+  <text x="600" y="175" text-anchor="middle" fill="#2459bc" font-size="14" font-weight="700" letter-spacing="1">OPTIONAL · SELF-HOSTED</text>
+  <text x="600" y="203" text-anchor="middle" fill="#172a44" font-size="23" font-weight="700">Internet relay</text>
+  <text x="600" y="232" text-anchor="middle" fill="#53677d" font-size="15">HTTPS forwarding · no Git repository stored here</text>
+
+  <rect x="40" y="290" width="350" height="240" rx="20" fill="#ffffff" stroke="#326fe5" stroke-width="3"/>
+  <rect x="62" y="312" width="51" height="41" rx="6" fill="#e6eefc" stroke="#326fe5" stroke-width="2"/>
+  <path d="M76 358 H100 M88 353 V358" fill="none" stroke="#326fe5" stroke-width="2" stroke-linecap="round"/>
+  <text x="130" y="335" class="cardtitle">Owner host</text>
+  <text x="62" y="384" class="body">XGit.IO desktop + local agent</text>
+  <rect x="62" y="404" width="305" height="52" rx="11" fill="#eef4ff"/>
+  <text x="78" y="427" class="pill">Writable hosted Git repository</text>
+  <text x="78" y="446" fill="#53677d" font-size="14">and project metadata</text>
+  <text x="62" y="491" class="body">Controls access, settings, and pushes</text>
+
+  <rect x="425" y="290" width="350" height="240" rx="20" fill="#ffffff" stroke="#8ca4c2" stroke-width="2.5"/>
+  <rect x="447" y="312" width="51" height="41" rx="6" fill="#eef2f8" stroke="#6985a9" stroke-width="2"/>
+  <path d="M461 358 H485 M473 353 V358" fill="none" stroke="#6985a9" stroke-width="2" stroke-linecap="round"/>
+  <text x="515" y="335" class="cardtitle">Team member</text>
+  <text x="447" y="384" class="body">XGit.IO desktop + local agent</text>
+  <rect x="447" y="404" width="305" height="52" rx="11" fill="#eef2f8"/>
+  <text x="463" y="427" class="pill">Editable local Git clone</text>
+  <text x="463" y="446" fill="#53677d" font-size="14">branches and working files</text>
+  <text x="447" y="491" class="body">Publishes permitted commits to owner</text>
+
+  <rect x="810" y="290" width="350" height="240" rx="20" fill="#ffffff" stroke="#13835c" stroke-width="2.5"/>
+  <rect x="832" y="312" width="51" height="41" rx="6" fill="#e8f6ef" stroke="#13835c" stroke-width="2"/>
+  <path d="M846 358 H870 M858 353 V358" fill="none" stroke="#13835c" stroke-width="2" stroke-linecap="round"/>
+  <text x="900" y="335" class="cardtitle">Replica host</text>
+  <text x="832" y="384" class="body">Optional second member computer</text>
+  <rect x="832" y="404" width="305" height="52" rx="11" fill="#e8f6ef"/>
+  <text x="848" y="427" class="pill">Verified read-only Git copy</text>
+  <text x="848" y="446" fill="#53677d" font-size="14">committed history only</text>
+  <text x="832" y="491" class="body">Serves fetch during owner outage</text>
+
+  <rect x="40" y="556" width="1120" height="61" rx="14" fill="#edf3ff" stroke="#cbdcf8" stroke-width="2"/>
+  <circle cx="70" cy="586" r="8" fill="#326fe5"/>
+  <text x="91" y="581" fill="#1d4fa8" font-size="16" font-weight="700">Owner online</text>
+  <text x="91" y="602" fill="#53677d" font-size="15">Member ↔ owner over LAN HTTPS, SSH tunnel, or relay; authorized fetch and push reach the owner.</text>
+
+  <rect x="40" y="630" width="1120" height="89" rx="14" fill="#eaf7f1" stroke="#c3e5d3" stroke-width="2"/>
+  <circle cx="70" cy="663" r="8" fill="#13835c"/>
+  <text x="91" y="659" fill="#0c6848" font-size="16" font-weight="700">Owner offline + connected replica</text>
+  <text x="91" y="682" fill="#53677d" font-size="15">Member → relay → replica for clone and fetch of the last confirmed revision.</text>
+  <text x="91" y="703" fill="#53677d" font-size="15">Pushes and project management wait for the owner. Keep separate backups.</text>
+</svg>
