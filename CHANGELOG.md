@@ -12,4 +12,4 @@ First public desktop beta for Windows x64 and Apple Silicon macOS.
 - Owner-managed Azure deployment targets and staging/production approval rules.
 - The app, taskbar, Windows installer, macOS app, and README now use the same XGit.IO icon.
 
-The installers are unsigned. The macOS DMG passed structural checks but still needs a launch test on a Mac. See the README for replica, deployment, and security limits.
+The installers are unsigned. See the README for replica, deployment, and security limits.
