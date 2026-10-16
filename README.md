@@ -24,7 +24,20 @@ Both downloads are in the [v0.1.0-beta release](https://github.com/Ethan0007/XGi
 
 The Windows installer is unsigned. The macOS app has an ad-hoc integrity signature and is not notarized by Apple, so macOS may require explicit approval. Keep a separate backup of important repositories and [read the current limits](#security-and-current-limits) before using the beta for critical work.
 
-On macOS, drag **XGit.IO.app** into **Applications** and open it from there. Replace the previous app if you installed an earlier beta. If macOS blocks this unnotarized build, open **System Settings > Privacy & Security** and choose **Open Anyway** for XGit.IO if offered. See [Apple's guidance for opening downloaded apps](https://support.apple.com/en-us/102445).
+### macOS: install and open for the first time
+
+The Apple Silicon download supports M-series Macs, including M4. This beta is not notarized by Apple. On first launch, macOS may show **“XGit.IO” Not Opened** and say that Apple could not verify the app is free of malware.
+
+1. Download **XGit-macOS-arm64.dmg** from this repository's [release page](https://github.com/Ethan0007/XGit.IO/releases/tag/v0.1.0-beta).
+2. Open the DMG and drag **XGit.IO.app** into **Applications**. Replace the previous app if you installed an earlier beta.
+3. Open **XGit.IO** from **Applications**.
+4. If the verification warning appears, click **Done**.
+5. Open **System Settings > Privacy & Security**, scroll to **Security**, and find the message about XGit.IO being blocked.
+6. If you trust the download, click **Open Anyway**, authenticate if asked, and confirm **Open**.
+
+macOS saves this approval for the app. If **Open Anyway** is missing, try opening XGit.IO from Applications again, then return to Privacy & Security. On an organization-managed Mac, ask your IT administrator if approval is restricted. See [Apple's instructions for opening downloaded apps](https://support.apple.com/en-us/102445).
+
+If the message instead says the app **is damaged** or **will damage your computer**, stop and report the exact message in [Issues](https://github.com/Ethan0007/XGit.IO/issues). These steps apply to the unverified-app warning above.
 
 ## See a team project move
 
