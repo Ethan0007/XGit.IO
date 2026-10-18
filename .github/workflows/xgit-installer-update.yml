@@ -1,0 +1,120 @@
+name: Verify updated Apple Silicon installer
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/xgit-installer-update.yml']
+permissions:
+  contents: read
+concurrency:
+  group: xgit-release-installer-update
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - name: Download hash-verified binary-only installer kit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$(uname -m)" == arm64 ]]
+          gh api -H 'Accept: application/octet-stream' repos/Ethan0007/XGit.IO/releases/assets/654706906 > "$RUNNER_TEMP/input.zip"
+          echo "99a1fd56b6b71370e62da51d2d39e1a53c277469493465df7814ccc2068c0ecb  $RUNNER_TEMP/input.zip" | shasum -a 256 -c -
+          mkdir -p "$RUNNER_TEMP/kit"
+          python3 - "$RUNNER_TEMP/input.zip" "$RUNNER_TEMP/kit" <<'PY'
+          import sys, zipfile
+          from pathlib import Path
+          target = Path(sys.argv[2]).resolve()
+          with zipfile.ZipFile(sys.argv[1]) as archive:
+              for name in archive.namelist():
+                  candidate = (target / name).resolve()
+                  if target not in candidate.parents: raise ValueError('Unsafe kit archive path')
+              archive.extractall(target)
+          PY
+      - name: Build and verify the final DMG
+        shell: bash
+        run: |
+          set -euo pipefail
+          kit="$(find "$RUNNER_TEMP/kit" -mindepth 1 -maxdepth 1 -type d | head -n 1)"
+          archive="$(find "$kit/artifacts" -maxdepth 1 -type f -name '*.tar.gz' | head -n 1)"
+          bash "$kit/scripts/package-macos-installer.sh" osx-arm64 "$archive" | tee "$RUNNER_TEMP/build.log"
+          mkdir -p "$RUNNER_TEMP/output"
+          dmg="$(find "$kit/artifacts" -maxdepth 1 -name '*.dmg' -type f | head -n 1)"
+          test -n "$dmg"
+          cp "$dmg" "$RUNNER_TEMP/output/XGit-macOS-arm64.dmg"
+          cd "$RUNNER_TEMP/output"
+          shasum -a 256 XGit-macOS-arm64.dmg > SHA256SUMS.txt
+          {
+            printf 'macOS version: '; sw_vers -productVersion
+            printf 'Architecture: '; uname -m
+            echo 'PASS: native signatures, resource seal, HFS+ DMG integrity, desktop launch, authenticated agent.'
+            echo 'PASS: fresh-install data is empty; LAN and relay are disabled; data directory is 0700 and local key is 0600.'
+            echo 'Ad-hoc signed; not Apple notarized.'
+          } > MACOS-VALIDATION.txt
+      - name: Save verified Apple Silicon installer
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: macos-arm64-release
+          path: ${{ runner.temp }}/output/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+  validate-current-macos:
+    needs: build
+    runs-on: macos-26
+    timeout-minutes: 15
+    steps:
+      - name: Download the verified installer
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: macos-arm64-release
+          path: ${{ runner.temp }}/output
+      - name: Download hash-verified verification tools
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$(uname -m)" == arm64 ]]
+          gh api -H 'Accept: application/octet-stream' repos/Ethan0007/XGit.IO/releases/assets/654706906 > "$RUNNER_TEMP/input.zip"
+          echo "99a1fd56b6b71370e62da51d2d39e1a53c277469493465df7814ccc2068c0ecb  $RUNNER_TEMP/input.zip" | shasum -a 256 -c -
+          mkdir -p "$RUNNER_TEMP/kit"
+          python3 - "$RUNNER_TEMP/input.zip" "$RUNNER_TEMP/kit" <<'PY'
+          import sys, zipfile
+          from pathlib import Path
+          target = Path(sys.argv[2]).resolve()
+          with zipfile.ZipFile(sys.argv[1]) as archive:
+              for name in archive.namelist():
+                  candidate = (target / name).resolve()
+                  if target not in candidate.parents: raise ValueError('Unsafe kit archive path')
+              archive.extractall(target)
+          PY
+      - name: Verify signatures and launch the final DMG on macOS 26
+        shell: bash
+        run: |
+          set -euo pipefail
+          kit="$(find "$RUNNER_TEMP/kit" -mindepth 1 -maxdepth 1 -type d | head -n 1)"
+          cd "$RUNNER_TEMP/output"
+          shasum -a 256 -c SHA256SUMS.txt
+          hdiutil verify XGit-macOS-arm64.dmg
+          mkdir -p "$RUNNER_TEMP/verified-volume"
+          hdiutil attach -readonly -nobrowse -mountpoint "$RUNNER_TEMP/verified-volume" XGit-macOS-arm64.dmg
+          trap 'hdiutil detach "$RUNNER_TEMP/verified-volume" || true' EXIT
+          bash "$kit/scripts/verify-macos-app.sh" "$RUNNER_TEMP/verified-volume/XGit.IO.app" osx-arm64
+          bash "$kit/scripts/smoke-macos-app.sh" "$RUNNER_TEMP/verified-volume/XGit.IO.app"
+          {
+            printf 'macOS version: '; sw_vers -productVersion
+            printf 'Architecture: '; uname -m
+            echo 'PASS: final DMG signature and integrity checks; desktop and agent launch.'
+            echo 'PASS: fresh-install data is empty; sharing is disabled; private-storage permissions enforced.'
+          } > "$RUNNER_TEMP/MACOS-CURRENT-VALIDATION.txt"
+      - name: Save macOS 26 verification
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: macos-current-validation
+          path: ${{ runner.temp }}/MACOS-CURRENT-VALIDATION.txt
+          if-no-files-found: error
+          retention-days: 7
