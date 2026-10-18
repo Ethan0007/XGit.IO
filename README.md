@@ -101,6 +101,12 @@ XGit.IO can build and test supported static frontends and API projects in Docker
 
 Azure targets and credentials stay on the owner host. The owner decides whether staging and production deployments require approval; Admins cannot change that policy. When approval is required, the owner can approve the built artifact and deployment continues without rebuilding. Without a required approval, a valid deployment proceeds automatically once the owner host can deploy it.
 
+## Review changes before merging
+
+Open a pull request from a branch in the sidebar or Branches tab. Reviewers can inspect the diff, discuss specific files and lines, and approve or request changes inside XGit.IO. The Conflicts tab shows conflicting code from both branches with its original line numbers.
+
+Protected branches reject direct pushes. Merging requires current independent approval, resolved required discussions, no merge conflicts, and a passing build of the proposed merged result. New commits or policy changes invalidate earlier approvals and build results. These checks run on the owner host, which must be online. Read the [pull-request guide](docs/PULL-REQUESTS.md) for reviewer roles and branch protection.
+
 ## Security and current limits
 
 - The local management API binds to loopback. LAN access uses HTTPS and exposes only the project network endpoints.

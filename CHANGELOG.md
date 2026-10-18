@@ -1,5 +1,15 @@
 # Changelog
 
+## Pull requests and installer refresh — October 18, 2026
+
+- Added owner-hosted pull requests, project-member reviews, inline discussions, and configurable branch protection.
+- Added conflict previews with the file path, both branches' code, and original line numbers.
+- Required successful builds of the proposed merged result before merging. Failed, missing, running, and outdated checks block a merge.
+- Unified Create pull request in the sidebar and Branches menus; placed Pull requests after Changes.
+- Preserved request selection during background refreshes and kept background checks quiet.
+- Tightened private data-directory and local API-key permissions on macOS.
+- Rebuilt Windows x64 and Apple Silicon macOS installers from clean payloads. Projects, sample requests, local credentials, and developer network settings are not included.
+
 ## Free-use license — October 16, 2026
 
 - XGit.IO is free to download and use for individuals, teams, and businesses. No purchase or subscription is required.
