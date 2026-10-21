@@ -101,6 +101,12 @@ XGit.IO can build and test supported static frontends and API projects in Docker
 
 Azure targets and credentials stay on the owner host. The owner decides whether staging and production deployments require approval; Admins cannot change that policy. When approval is required, the owner can approve the built artifact and deployment continues without rebuilding. Without a required approval, a valid deployment proceeds automatically once the owner host can deploy it.
 
+## Review working changes
+
+Select a file in **Changes** to compare its added and removed code in unified or side-by-side view. Original line numbers, syntax colors, search, and change navigation help you review each edit. Staged and unstaged previews use the corresponding Git versions.
+
+Members can opt in to sharing uncommitted previews. Select a shared file to see the member, branch, and patch. Offline previews are marked as cached; applying a member's changes requires an explicit action. Background refreshes preserve the selected file, and loading appears only while a preview is being retrieved.
+
 ## Review changes before merging
 
 Open a pull request from a branch in the sidebar or Branches tab. Reviewers can inspect the diff, discuss specific files and lines, and approve or request changes inside XGit.IO. The Conflicts tab shows conflicting code from both branches with its original line numbers.

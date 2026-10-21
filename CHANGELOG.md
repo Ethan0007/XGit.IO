@@ -1,5 +1,13 @@
 # Changelog
 
+## Working changes review and installer refresh — October 21, 2026
+
+- Added unified and side-by-side code previews for local staged and unstaged changes, with original line numbers, syntax colors, search, and change navigation.
+- Added opt-in member previews with author and branch attribution, cached/offline status, and explicit apply controls.
+- Kept selected previews stable during quiet refreshes; added cancellation, bounded loading, and retry handling.
+- Fixed pull request selection during list refreshes.
+- Refreshed the Windows x64 and Apple Silicon macOS installers. Fresh installs start empty; sample projects, examples, developer credentials, and local network settings are excluded.
+
 ## Pull requests and installer refresh — October 18, 2026
 
 - Added owner-hosted pull requests, project-member reviews, inline discussions, and configurable branch protection.
