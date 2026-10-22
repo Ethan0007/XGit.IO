@@ -1,5 +1,15 @@
 # Changelog
 
+## Pipeline installer update: October 22, 2026
+
+- Add automatic static output detection with an editable manual preference; retain existing workflow output settings.
+- Show start, finish, elapsed, and completed durations on pipeline cards, with direct access to stage logs.
+- Report actual output mismatches and build diagnostics, preserve late log output, and redact saved deployment tokens.
+- Use Linux dependency/build-cache volumes and a higher memory allowance for Next.js static exports; clean containers after failed or canceled runs.
+- Validate frontend deployment configuration separately from build-only runs. Preserve approval and artifact-integrity checks for automatically selected output.
+- 140 non-Docker regression checks passed, alongside native UI and real Docker output/approval and pull request build checks.
+- Validate actual Windows installation and final DMG on Apple Silicon macOS 15 and 26. Payload scans exclude credentials, local data, examples, debug symbols, and developer paths.
+
 ## Installer update: October 22, 2026
 
 - Full-width branch rows and context menus in the sidebar and Branches tab.
