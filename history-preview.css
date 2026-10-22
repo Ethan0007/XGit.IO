@@ -1,0 +1,17 @@
+/* Full application view: retain every edge of the native History screenshot. */
+.platform-downloads{display:flex;gap:8px;margin-left:auto;flex-shrink:0}.platform-downloads .button{gap:4px;font-size:11px;padding-inline:13px}.platform-downloads .download-prefix{margin-right:0}.nav-wrap{gap:24px}.nav-wrap nav{gap:23px}.nav-wrap .platform-downloads .nav-download{margin-left:0}
+.product-preview[data-feature="history"] .workspace{display:block;min-height:0}
+.product-preview[data-feature="history"] .app-sidebar,.product-preview[data-feature="history"] .app-top,.product-preview[data-feature="history"] .app-status{display:none}
+.product-preview[data-feature="history"] .feature-tabs{background:#f7f9fc;border-bottom-color:#dae2ed;padding:0 20px;gap:26px;min-height:47px}
+.product-preview[data-feature="history"] .feature-tabs button{color:#60738e;font-size:12px;padding-block:15px 13px}
+.product-preview[data-feature="history"] .feature-tabs button[aria-selected="true"]{color:#0866ff;border-bottom-color:#0866ff}
+.product-preview[data-feature="history"] .feature-panel{position:relative;padding:0;min-height:0}
+.product-preview[data-feature="history"] .panel-heading{position:absolute;bottom:12px;right:12px;z-index:2;margin:0}
+.product-preview[data-feature="history"] .panel-heading>div{display:none}
+.product-preview[data-feature="history"] #expand-preview{width:35px;height:35px;background:#273c35eb;border-color:#7e9d90;color:#fff}
+.product-preview[data-feature="history"] .screenshot-wrap{border-radius:0;min-height:0;background:#1b2320}
+.product-preview[data-feature="history"] .screenshot-wrap img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;aspect-ratio:16/9}
+.screenshot-actions{display:flex;align-items:center;gap:14px}.zoom-button{background:#edf4ff;color:#0866ff;border:1px solid #cfdef3;border-radius:5px;padding:7px 12px;font-size:11px}.media-dialog.zoomed #large-screenshot{width:auto;min-width:100%;max-width:none}.media-dialog.zoomed .dialog-toolbar{min-width:100%;position:sticky;left:0}
+@media(max-width:1000px){.nav-wrap{gap:17px}.nav-wrap nav{gap:15px;font-size:12px}.platform-downloads .button{font-size:10px;padding-inline:10px}}
+@media(max-width:760px){.nav-wrap{position:relative;height:92px;align-content:center;gap:10px 16px}.nav-wrap .brand{font-size:22px}.platform-downloads{margin-left:auto;gap:6px}.platform-downloads .button{display:inline-flex;font-size:9px;min-height:33px;padding:8px 10px;gap:4px}.download-prefix{display:none}.nav-wrap .menu-toggle{position:absolute;right:0;bottom:0;font-size:9px;padding:4px 0}.nav-wrap nav{position:absolute;top:92px;left:0;right:0;z-index:2;margin:0;padding:15px 0 19px}.header:has(nav.is-open){padding-bottom:50px}.product-preview[data-feature="history"] .feature-tabs{gap:20px;padding-inline:14px;min-height:42px}.product-preview[data-feature="history"] .feature-tabs button{font-size:10px;padding-block:13px 11px}.product-preview[data-feature="history"] #expand-preview{height:27px;width:27px}.product-preview[data-feature="history"] .panel-heading{bottom:7px;right:7px}.preview-caption{font-size:8px;line-height:1.7}}
+@media(max-width:390px){.platform-downloads .button{display:inline-flex;font-size:9px;padding:7px 8px}.nav-wrap .brand{font-size:20px}.nav-wrap .brand img{width:30px;height:30px}.nav-wrap{gap:8px}.product-preview[data-feature="history"] .feature-tabs{gap:15px}.product-preview[data-feature="history"] .feature-tabs button{font-size:9px}}

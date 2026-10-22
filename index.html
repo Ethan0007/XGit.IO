@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="XGit.IO turns your own machine into your team's Git host. Review code, manage pull requests and project tasks, and build locally with owner approval.">
+  <meta name="theme-color" content="#0866ff">
+  <title>XGit.IO | Your Machine. Your Team. Your Control.</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="history-preview.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="nav-wrap container">
+    <a class="brand" href="#" aria-label="XGit.IO home"><img src="assets/icon.svg" alt="" width="35" height="35"><span>XGit.IO</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="nav" aria-label="Main navigation">
+      <a href="#features">Features</a><a href="#network">How it works</a><a href="#downloads">Downloads</a>
+      <a href="https://github.com/Ethan0007/XGit.IO#readme" target="_blank" rel="noopener">Docs <span aria-hidden="true">↗</span></a>
+    </nav>
+    <div class="platform-downloads"><a class="button button-small nav-download" aria-label="Download for Windows" href="https://github.com/Ethan0007/XGit.IO/releases/download/v0.1.0-beta/XGit-Setup-Windows-x64.exe"><span class="download-prefix">Download for </span>Windows <span aria-hidden="true">↓</span></a><a class="button button-small button-white nav-download" aria-label="Download for macOS" href="https://github.com/Ethan0007/XGit.IO/releases/download/v0.1.0-beta/XGit-macOS-arm64.dmg"><span class="download-prefix">Download for </span>macOS <span aria-hidden="true">↓</span></a></div>
+  </div>
+</header>
+<main id="main">
+  <section class="hero container">
+    <div class="eyebrow-pill"><span class="status-dot"></span> THE DESKTOP WORKSPACE FOR YOUR TEAM</div>
+    <h1>Your machine.<br><span>Your team’s Git host.</span></h1>
+    <p class="hero-lead">A shared place for your code, reviews, and next release.<br class="desktop-break"> Hosted on your own machine. Built around your team.</p>
+    <div class="hero-actions"><a class="button" href="#downloads"><svg aria-hidden="true"><use href="#i-download"/></svg>Download the free beta</a><button class="button button-white" id="watch-demo" type="button"><svg aria-hidden="true"><use href="#i-play"/></svg>See it in action <span class="duration">35 sec</span></button></div>
+    <p class="hero-note">No GitHub account or cloud repository required.</p>
+
+    <div class="product-preview" id="features" data-feature="history">
+      <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>Demo Store <span class="window-slash">/</span> XGit.IO</span><span class="window-local"><span class="status-dot"></span> Local workspace</span></div>
+      <div class="workspace">
+        <aside class="app-sidebar" aria-label="Illustrative project navigation">
+          <div class="sidebar-heading">WORKSPACE</div><div class="sidebar-workspace"><img src="assets/icon.svg" alt="" width="23" height="23">My team</div>
+          <div class="sidebar-heading project-heading">PROJECTS <span>+</span></div><div class="project-selected"><svg aria-hidden="true"><use href="#i-branch"/></svg><div>Demo Store<small>Git repository</small></div></div>
+          <div class="branch-label">⌄ &nbsp; feature</div><div class="sidebar-branch">item-totals</div><div class="sidebar-branch">input-validation</div><div class="sidebar-branch active">✓ &nbsp; development</div><div class="sidebar-branch">main</div>
+          <div class="sidebar-bottom"><span class="avatar">J</span><div>Jordan Lee<small>Project owner</small></div><span class="small-dot"></span></div>
+        </aside>
+        <div class="app-main">
+          <div class="app-top"><div><small>WORKBENCH</small><strong>Demo Store</strong></div><div class="app-top-actions"><span class="app-branch">development</span><span class="app-publish">↑ Publish</span></div></div>
+          <div class="feature-tabs" role="tablist" aria-label="Explore XGit.IO features">
+            <button role="tab" id="tab-history" aria-controls="feature-panel" aria-selected="true" data-feature="history">History</button>
+            <button role="tab" id="tab-changes" aria-controls="feature-panel" aria-selected="false" tabindex="-1" data-feature="changes">Changes <span>2</span></button>
+            <button role="tab" id="tab-pull-request" aria-controls="feature-panel" aria-selected="false" tabindex="-1" data-feature="pull-request">Pull requests</button>
+            <button role="tab" id="tab-board" aria-controls="feature-panel" aria-selected="false" tabindex="-1" data-feature="board">Project board</button>
+            <button role="tab" id="tab-pipeline" aria-controls="feature-panel" aria-selected="false" tabindex="-1" data-feature="pipeline">Pipelines</button>
+          </div>
+          <div id="feature-panel" class="feature-panel" role="tabpanel" aria-labelledby="tab-history" tabindex="0">
+            <div class="panel-heading"><div><h2 id="preview-title">The full picture of your project.</h2><p id="preview-subtitle">Follow connected commits, branches, and merges in History.</p></div><button id="expand-preview" class="icon-button" type="button" aria-label="Enlarge the full XGit.IO History screenshot"><svg aria-hidden="true"><use href="#i-expand"/></svg></button></div>
+            <div class="screenshot-wrap"><img id="feature-image" src="assets/history.png" width="3840" height="2160" alt="Complete XGit.IO desktop window with the left workspace and branch sidebar, History selected, and a connected sample graph of ten commits with three merges."></div>
+          </div>
+          <div class="app-status"><span><span class="status-dot"></span><span id="preview-status">Connected commits. Visible branches. Complete project context.</span></span><span>Illustrative demo project</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-caption"><span>Full XGit.IO History window with sample data. Click a tab to explore.</span><a href="#workflow">Follow a change through the workflow <span aria-hidden="true">↓</span></a></div>
+    <div class="product-principles"><span><svg aria-hidden="true"><use href="#i-computer"/></svg>Owner hosted Git</span><span><svg aria-hidden="true"><use href="#i-team"/></svg>Local + remote teams</span><span><svg aria-hidden="true"><use href="#i-check"/></svg>Free for business, too</span></div>
+  </section>
+
+  <section class="section intro-section container" id="workflow">
+    <div class="section-heading"><p class="eyebrow">FROM THE FIRST EDIT TO THE NEXT RELEASE</p><h2>Good work deserves<br>a clear way forward.</h2><p>AI or your teammate can write the code. Your team can see what changed, review it, and decide what ships.</p></div>
+    <div class="workflow-links"><a href="#review"><span>01</span>Review the changes<svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="#board"><span>02</span>Move work into QA<svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="#pipeline"><span>03</span>Approve the deployment<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </section>
+
+  <section class="section review-section container" id="review">
+    <div class="review-copy"><p class="eyebrow">CHANGES & PULL REQUESTS</p><h2>Know what you’re<br>about to merge.</h2><p>Read the additions and removals in context. Stage your own work, preview changes a member chooses to share, and review a branch before it joins the project.</p><ul class="check-list"><li>Unified and side by side code diffs</li><li>Conflict previews with files and affected lines</li><li>Required reviews and passing builds for protected branches</li></ul><button class="text-button" type="button" data-show-feature="pull-request">Explore the pull request preview <span aria-hidden="true">↗</span></button></div>
+    <div class="review-visual"><div class="code-preview"><div class="code-title"><span><svg aria-hidden="true"><use href="#i-file"/></svg> src/BookingService.cs</span><span class="diff-stat">+4 <b>−2</b></span></div><pre aria-label="Illustrative code diff"><code><span class="context"><i>24</i> public async Task&lt;Booking&gt; SaveAsync(Booking booking)</span>
+<span class="context"><i>25</i> {</span>
+<span class="removed"><i>26</i> − repository.Save(booking);</span>
+<span class="removed"><i>27</i> − return booking;</span>
+<span class="added"><i>26</i> + ArgumentNullException.ThrowIfNull(booking);</span>
+<span class="added"><i>27</i> + await repository.SaveAsync(booking);</span>
+<span class="added"><i>28</i> + await history.RecordAsync(booking.Id);</span>
+<span class="added"><i>29</i> + return booking;</span>
+<span class="context"><i>30</i> }</span></code></pre><div class="code-footer"><span class="status-dot"></span> Review the code. Keep the context.</div></div><div class="review-stamp"><svg aria-hidden="true"><use href="#i-review"/></svg><div>Ready for a second pair of eyes.<small>Your branch. Your reviewers. Your rules.</small></div></div></div>
+  </section>
+
+  <section class="network-section section" id="network"><div class="container">
+    <div class="section-heading centered"><p class="eyebrow">ONE HOST. A CONNECTED TEAM.</p><h2>Across the desk.<br>Across the internet.</h2><p>The repository lives on the owner’s machine. XGit.IO gives your team a way to work together, wherever they connect from.</p></div>
+    <div class="network-controls"><div class="segmented" role="group" aria-label="Connection preview"><button type="button" data-network="local" aria-pressed="true">Local network</button><button type="button" data-network="ssh" aria-pressed="false">SSH tunnel</button><button type="button" data-network="relay" aria-pressed="false">Internet relay</button></div><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false"><span aria-hidden="true">Ⅱ</span><span>Pause animation</span></button></div>
+    <div class="network-diagram" data-mode="local">
+      <svg class="network-routes" viewBox="0 0 1100 460" preserveAspectRatio="none" aria-hidden="true"><defs><path id="route-owner" d="M 275 115 H 345 Q 365 115 365 135 V 185 Q 365 205 385 205 H 466"/><path id="route-local" d="M 275 325 H 345 Q 365 325 365 305 V 270 Q 365 250 385 250 H 466"/><path id="route-remote1" d="M 634 205 H 715 Q 735 205 735 185 V 135 Q 735 115 755 115 H 825"/><path id="route-remote2" d="M 634 250 H 715 Q 735 250 735 270 V 305 Q 735 325 755 325 H 825"/></defs><g class="route-lines"><use href="#route-owner"/><use href="#route-local"/><use href="#route-remote1"/><use href="#route-remote2"/></g><g class="route-dots"><circle r="6"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#route-owner"/></animateMotion></circle><circle r="6"><animateMotion dur="3.4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#route-local"/></animateMotion></circle><circle r="6"><animateMotion dur="3s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#route-remote1"/></animateMotion></circle><circle r="6"><animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#route-remote2"/></animateMotion></circle></g><g class="route-ports"><circle cx="275" cy="115" r="5"/><circle cx="275" cy="325" r="5"/><circle cx="466" cy="205" r="5"/><circle cx="466" cy="250" r="5"/><circle cx="634" cy="205" r="5"/><circle cx="634" cy="250" r="5"/><circle cx="825" cy="115" r="5"/><circle cx="825" cy="325" r="5"/></g></svg>
+      <div class="network-node node-owner"><span class="node-icon"><svg aria-hidden="true"><use href="#i-computer"/></svg></span><div><strong>Owner host</strong><small>The writable repository</small></div><span class="node-label">YOUR MACHINE</span></div>
+      <div class="network-node node-local"><span class="node-icon"><svg aria-hidden="true"><use href="#i-team"/></svg></span><div><strong>Local teammate</strong><small>Their own working clone</small></div><span class="node-label">OFFICE NETWORK</span></div>
+      <div class="network-hub"><img src="assets/icon.svg" alt="" width="61" height="61"><strong>XGit.IO</strong><small>Team connectivity</small></div>
+      <div class="network-node node-remote1"><span class="node-icon"><svg aria-hidden="true"><use href="#i-computer"/></svg></span><div><strong>Remote teammate</strong><small>Their own working clone</small></div><span class="node-label">INTERNET</span></div>
+      <div class="network-node node-remote2"><span class="node-icon"><svg aria-hidden="true"><use href="#i-computer"/></svg></span><div><strong>Remote teammate</strong><small>Their own working clone</small></div><span class="node-label">INTERNET</span></div>
+      <div class="connection-tag tag-left">Local</div><div class="connection-tag tag-right">Internet</div>
+      <div class="replica-node"><svg aria-hidden="true"><use href="#i-copy"/></svg><div><strong>Optional read only replica</strong><small>Confirmed commits. Clone and fetch.</small></div><span class="one-way">↓</span></div>
+    </div>
+    <div class="connection-explainer" aria-live="polite"><span class="connection-icon"><svg aria-hidden="true"><use href="#i-network"/></svg></span><div><strong id="connection-title">Same office. Direct connection.</strong><p id="connection-description">Local members connect to the owner over LAN HTTPS and verify the host’s certificate fingerprint. Remote members can use a configured SSH tunnel or trusted relay.</p></div></div>
+    <p class="network-note">XGit.IO is the team workspace, not a cloud repository. Internet access requires an owner configured connection. Replicas serve confirmed history and cannot accept pushes.</p>
+  </div></section>
+
+  <section class="section container board-section" id="board">
+    <div class="section-split-heading"><div><p class="eyebrow">PROJECT BOARD</p><h2>The next step<br>should be obvious.</h2></div><div><p>Give the work a place to go. Organize tasks, track progress, and move a finished update into QA for the team to check.</p><p class="interaction-hint"><span class="status-dot"></span> Try the preview: drag “Item totals” into QA.</p></div></div>
+    <div class="board-demo" aria-label="Interactive Project board demonstration"><div class="demo-toolbar"><span><svg aria-hidden="true"><use href="#i-board"/></svg>Demo Store <span class="muted">/ Project board</span></span><span class="demo-badge">INTERACTIVE PREVIEW</span></div><div class="board-columns">
+      <div class="board-column"><div class="board-column-heading"><span>To do <b>2</b></span><span aria-hidden="true">···</span></div><div class="task-card"><small>Task</small><strong>Improve documentation</strong><span><i></i> Normal <b>JL</b></span></div><div class="task-card"><small>Task</small><strong>Refactor data models</strong><span><i></i> Normal <b>JL</b></span></div></div>
+      <div class="board-column" id="doing-column"><div class="board-column-heading"><span>Doing <b id="doing-count">1</b></span><span aria-hidden="true">···</span></div><div class="task-card draggable" id="moving-card" draggable="true"><small>Task <span aria-hidden="true">⠿</span></small><strong>Item totals</strong><span><i></i> Normal <b>JL</b></span><button id="move-card" type="button">Move to QA <span aria-hidden="true">→</span></button></div></div>
+      <div class="board-column qa-column" id="qa-column"><div class="board-column-heading"><span>QA <b id="qa-count">1</b></span><span aria-hidden="true">···</span></div><div class="task-card"><small>Task</small><strong>Input validation</strong><span><i></i> Normal <b>JL</b></span></div><div class="drop-hint">Drop the card here</div></div>
+      <div class="board-column"><div class="board-column-heading"><span>Done <b>1</b></span><span aria-hidden="true">···</span></div><div class="task-card"><small>Feature</small><strong>Release notes</strong><span><i></i> Normal <b>JL</b></span></div></div>
+    </div><div class="demo-status"><span id="board-message" role="status">A clear handoff from development to QA.</span><button class="text-button" id="reset-board" type="button">Reset preview <span aria-hidden="true">↻</span></button></div></div>
+  </section>
+
+  <section class="pipeline-section section" id="pipeline"><div class="container">
+    <div class="section-heading centered"><p class="eyebrow">LOCAL DOCKER WORKFLOWS</p><h2>Build locally.<br><span>Approve.</span> Deploy.</h2><p>A passing build is one step. When your policy requires owner approval, deployment waits for that decision.</p></div>
+    <div class="pipeline-demo"><div class="pipeline-topline"><span><span class="status-dot"></span>development <span aria-hidden="true">→</span> staging</span><span class="demo-badge">INTERACTIVE PREVIEW</span></div><div class="pipeline-stages">
+      <article class="pipeline-card"><span class="stage-number">01</span><svg class="stage-icon good" aria-hidden="true"><use href="#i-check"/></svg><h3>Run</h3><span class="stage-status good">Started</span><p>Started by Jordan Lee</p><small>development · 81c42d7a</small></article>
+      <article class="pipeline-card"><span class="stage-number">02</span><svg class="stage-icon good" aria-hidden="true"><use href="#i-check"/></svg><h3>Build</h3><span class="stage-status good">Passed</span><p>Built locally in Docker</p><small>Reviewed artifact ready</small></article>
+      <article class="pipeline-card approval-card" id="approval-card"><span class="stage-number">03</span><svg class="stage-icon amber" id="approval-icon" aria-hidden="true"><use href="#i-clock"/></svg><h3>Owner approval</h3><span class="stage-status amber" id="approval-status">Waiting</span><p id="approval-summary">Waiting for the project owner</p><button class="button button-small" id="approve-button" type="button">Approve <span aria-hidden="true">→</span></button></article>
+      <article class="pipeline-card" id="deploy-card"><span class="stage-number">04</span><svg class="stage-icon muted" id="deploy-icon" aria-hidden="true"><use href="#i-upload"/></svg><h3>Deploy</h3><span class="stage-status muted" id="deploy-status">Pending</span><p id="deploy-summary">Waiting for owner approval</p><small>Configured deployment target</small></article>
+    </div><div class="pipeline-bottomline"><span id="pipeline-message" role="status">Try the owner approval step. This is a preview; no code is deployed.</span><button class="text-button" id="reset-pipeline" type="button">Replay <span aria-hidden="true">↻</span></button></div></div>
+    <div class="pipeline-footnotes"><span><svg aria-hidden="true"><use href="#i-computer"/></svg>Build and test on your computer</span><span><svg aria-hidden="true"><use href="#i-review"/></svg>Owner controlled approval rules</span><span><svg aria-hidden="true"><use href="#i-upload"/></svg>Deploy to a configured target</span></div>
+  </div></section>
+
+  <section class="section download-section container" id="downloads">
+    <div class="section-heading centered"><p class="eyebrow">START WITH YOUR OWN MACHINE</p><h2>Your next project.<br>Your own Git host.</h2><p>XGit.IO is free to download and use for individuals, teams, and businesses. No purchase or subscription is required.</p></div>
+    <div class="download-grid">
+      <article class="download-card"><div class="platform-logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 4.4 10.3 3.3v8.1H2zm9.5-1.3L22 1.7v9.7H11.5zM2 12.6h8.3v8.1L2 19.6zm9.5 0H22v9.7l-10.5-1.4z"/></svg></div><span class="platform-tag">WINDOWS x64</span><h3>Make yourself at home.</h3><p>Install XGit.IO on your Windows computer and create your first workspace.</p><a class="button" href="https://github.com/Ethan0007/XGit.IO/releases/download/v0.1.0-beta/XGit-Setup-Windows-x64.exe"><svg aria-hidden="true"><use href="#i-download"/></svg>Download for Windows</a><small>v0.1.0-beta · .exe installer · unsigned beta</small></article>
+      <article class="download-card"><div class="platform-logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.1 12.7c0-2 1.7-3 1.8-3.1-1-1.5-2.5-1.7-3.1-1.7-1.3-.1-2.6.8-3.3.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.8.8-3.6 2.1-1.6 2.7-.4 6.7 1.2 8.9.8 1 1.6 2.1 2.7 2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 2-1 2.7-2 .9-1.2 1.3-2.4 1.3-2.5-.1 0-2.6-1-2.6-3.7zM14.8 6.3c.6-.8 1.1-1.8 1-2.8-1 .1-2.1.7-2.8 1.4-.6.7-1.1 1.7-1 2.7 1.1.1 2.1-.5 2.8-1.3z"/></svg></div><span class="platform-tag">macOS · APPLE SILICON</span><h3>A workspace for your Mac.</h3><p>For M-series Macs, including M4. Drag the app into Applications to get started.</p><a class="button button-white" href="https://github.com/Ethan0007/XGit.IO/releases/download/v0.1.0-beta/XGit-macOS-arm64.dmg"><svg aria-hidden="true"><use href="#i-download"/></svg>Download for macOS</a><small>v0.1.0-beta · .dmg · not Apple notarized</small></article>
+    </div>
+    <div class="download-links"><a href="https://github.com/Ethan0007/XGit.IO/releases/tag/v0.1.0-beta" target="_blank" rel="noopener">Release notes <span aria-hidden="true">↗</span></a><a href="https://github.com/Ethan0007/XGit.IO/releases/download/v0.1.0-beta/SHA256SUMS.txt">SHA-256 checksums <span aria-hidden="true">↗</span></a><a href="https://github.com/Ethan0007/XGit.IO#macos-install-and-open-for-the-first-time" target="_blank" rel="noopener">macOS opening guide <span aria-hidden="true">↗</span></a></div>
+    <p class="requirements">Git is required for repository work. Docker with a running Linux engine is needed for build and test workflows. Deployment services you choose may have their own charges.</p>
+  </section>
+
+  <section class="faq-section container section" id="faq"><div><p class="eyebrow">A FEW PRACTICAL QUESTIONS</p><h2>Before you<br>bring the team.</h2><a class="text-button" href="https://github.com/Ethan0007/XGit.IO#readme" target="_blank" rel="noopener">Read the documentation <span aria-hidden="true">↗</span></a></div><div class="faq-list">
+    <details><summary>Where does the repository actually live?<span aria-hidden="true">+</span></summary><p>The writable Git repository and project settings live on the owner’s machine. Members work in their own local clones. GitHub is used to distribute the XGit.IO downloads and documentation; you do not need a GitHub account to host a project in XGit.IO.</p></details>
+    <details><summary>How do remote teammates connect?<span aria-hidden="true">+</span></summary><p>The owner configures LAN HTTPS, an SSH tunnel, or a self hosted internet relay. Members join a specific project using an invitation and role. Verify the host’s trust information before connecting. A relay transports traffic and does not store the repository.</p></details>
+    <details><summary>What happens when the owner is offline?<span aria-hidden="true">+</span></summary><p>An optional verified replica can serve read only clone and fetch requests for commits it has confirmed, while the relay and replica remain online. Publishing and project management wait for the owner to reconnect. Replicas do not accept pushes and are not a replacement for backups.</p></details>
+    <details><summary>Does XGit.IO generate code with AI?<span aria-hidden="true">+</span></summary><p>XGit.IO reviews changes in your local Git working copy, whether those edits came from you, a teammate, or an external AI coding tool. The Changes view is for reviewing and staging the code; it is not a built in AI code generator.</p></details>
+    <details><summary>Can I use XGit.IO for business?<span aria-hidden="true">+</span></summary><p>Yes. XGit.IO is free to download and use for individuals, teams, and businesses. No purchase or subscription is required. The application source code remains private. See the published license and terms for the full conditions.</p></details>
+    <details><summary>Why might my computer show an installation warning?<span aria-hidden="true">+</span></summary><p>The Windows beta installer is unsigned. The macOS app has an ad hoc integrity signature and is not notarized by Apple. Follow the documented installation instructions for a trusted download. Review the beta’s current limits before using it for critical work.</p></details>
+  </div></section>
+</main>
+<footer><div class="container footer-main"><div><a class="brand" href="#"><img src="assets/icon.svg" alt="" width="35" height="35"><span>XGit.IO</span></a><p>Your Machine. Your Team. Your Control.</p></div><div class="footer-links"><a href="https://github.com/Ethan0007/XGit.IO" target="_blank" rel="noopener">GitHub ↗</a><a href="https://github.com/Ethan0007/XGit.IO/blob/main/LICENSE.txt" target="_blank" rel="noopener">License</a><a href="https://github.com/Ethan0007/XGit.IO/blob/main/docs/TERMS.txt" target="_blank" rel="noopener">Terms</a><a href="mailto:dev@xgit.io">Contact</a></div></div><div class="container footer-bottom"><span>© 2026 XGit.IO. Created by <a href="https://www.linkedin.com/in/joever-monceda-55242779/" target="_blank" rel="noopener">Joever Monceda</a>.</span><span>Built for the way your team works.</span></div></footer>
+<dialog id="image-dialog" class="media-dialog"><div class="dialog-toolbar"><strong id="image-dialog-title">XGit.IO History</strong><div class="screenshot-actions"><button type="button" class="zoom-button" id="image-zoom" aria-pressed="false">Zoom in</button><button type="button" class="icon-button close-dialog" aria-label="Close screenshot">×</button></div></div><img id="large-screenshot" src="assets/history.png" alt="Full XGit.IO desktop History window"><p>Demo project shown with isolated sample data.</p></dialog>
+<dialog id="video-dialog" class="media-dialog video-dialog"><div class="dialog-toolbar"><strong>XGit.IO in action</strong><button type="button" class="icon-button close-dialog" aria-label="Close video">×</button></div><video id="demo-video" controls playsinline preload="none"><source src="assets/demo.mp4" type="video/mp4">Your browser does not support embedded video. <a href="assets/demo.mp4">Download the video</a>.</video><p>35 seconds · Changes, Project board, team connections, and owner approval.</p></dialog>
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 15v5h16v-5"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol><symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5M3 3l6 6m12-6-6 6M3 21l6-6m12 6-6-6"/></symbol><symbol id="i-computer" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8m-4-5v5"/></symbol><symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m1 4a5 5 0 0 1 3 4v3"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol><symbol id="i-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M6 7v10m12-10a8 8 0 0 1-8 8H6"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H5v20h14V7zM14 2v5h5M8 12h8m-8 4h8"/></symbol><symbol id="i-review" viewBox="0 0 24 24"><path d="M14 3H4v18h16V9m-10 3 3 3L22 4M8 7h5M8 17h6"/></symbol><symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V3H3v13h5m4-3h5m-5 4h5"/></symbol><symbol id="i-board" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M9 3v18m7-18v18M5 7h1m6 0h1m6 0h1M5 11h1m6 0h1"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-upload" viewBox="0 0 24 24"><path d="M7 18H5a4 4 0 0 1-1-8 7 7 0 0 1 13-3 5.5 5.5 0 0 1 2 11h-2m-5 3V10m-4 4 4-4 4 4"/></symbol>
+</defs></svg>
+<noscript><p class="noscript-note">Feature switching and interactive demos need JavaScript. Downloads, documentation, and FAQs are available without it.</p></noscript>
+</body></html>

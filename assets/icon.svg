@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="XGit.IO curved X icon">
+  <path fill="#2867D8" d="M32 3C35 3 37 5 39 7L57 25C61 29 61 35 57 39L39 57C35 61 29 61 25 57L7 39C3 35 3 29 7 25L25 7C27 5 29 3 32 3Z"/>
+  <path d="M18 20C27 20 37 44 46 44" fill="none" stroke="#FFFFFF" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18 44C27 44 37 20 46 20V25" fill="none" stroke="#F04452" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 32H46V44" fill="none" stroke="#FFFFFF" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#FFFFFF"><circle cx="18" cy="20" r="3.2"/><circle cx="46" cy="44" r="3.2"/></g>
+  <g fill="#F04452"><circle cx="46" cy="20" r="3.2"/><circle cx="18" cy="44" r="3.2"/></g>
+  <g fill="#2867D8">
+    <circle cx="18" cy="20" r="1.25"/>
+    <circle cx="46" cy="20" r="1.25"/>
+    <circle cx="18" cy="44" r="1.25"/>
+    <circle cx="46" cy="44" r="1.25"/>
+  </g>
+</svg>
