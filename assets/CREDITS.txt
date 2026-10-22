@@ -7,4 +7,4 @@ Music used in the 35-second video: Digital Clouds (Mixkit).
 Composer: Alejandro Magana (A. M.).
 Music license: https://mixkit.co/license/#musicFree
 See the retained original video project credits for full media provenance.
-About Us portrait supplied by Joever Monceda. Background replaced with white using the built-in image editor; circular presentation applied with CSS.
+About Me portrait supplied by Joever Monceda. Background replaced with white using the built-in image editor; circular presentation applied with CSS.
