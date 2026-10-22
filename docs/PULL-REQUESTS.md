@@ -23,7 +23,7 @@ The default workflow path is `.xgit/workflows/static-site.yml`. Commit the workf
 
 ## Protected branches and connectivity
 
-For a completely empty hosted repository, the owner must first publish an initial target branch and its workflow. Open **Branch protection**, temporarily remove that branch from the protected list, publish the initial commit, then restore protection before inviting members. Once the target exists, use feature branches and pull requests for subsequent changes. Existing repositories with a committed target branch do not need this bootstrap step.
+For a completely empty hosted repository, the owner checks out the initial target branch, commits its workflow, and clicks **Publish**. The local owner action initializes that first hosted branch without changing protection settings or claiming a passing build. Other roles and direct Git pushes cannot use this initialization flow. Once the host has a branch, protected updates require feature branches and pull requests. Existing hosted repositories are never reinitialized by Publish.
 
 `main` and `development` are protected by default on the hosted repository. Direct pushes to protected branches are rejected, including pushes by the owner. Prepare local changes on a feature branch, push that branch, then use a pull request. The owner controls the protected branch list. Protection is enforced by a Git pre-receive hook in the hosted bare repository; it does not restrict changes made in local working copies or protect against an operating-system administrator altering the repository.
 

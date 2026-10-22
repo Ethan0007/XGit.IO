@@ -1,5 +1,15 @@
 # Changelog
 
+## Installer update: October 22, 2026
+
+- Full-width branch rows and context menus in the sidebar and Branches tab.
+- Refresh origin ahead/behind counts after a verified push; preserve visible authentication failure details.
+- Show local and hosted pipeline branches, with clear guidance when a branch has not been published to the owner host.
+- Allow only the local owner action to initialize the first branch of an empty hosted repository. Later protected updates continue to require pull requests, independent approval, and passing builds.
+- Clean release payloads exclude debug symbols, build paths, bundled projects, example requests, credentials, and developer configuration.
+- Validated the actual Windows installation and the final DMG on Apple Silicon macOS 15 and macOS 26. 134 non-Docker regression checks passed. The real Docker integration check was not rerun for this update.
+
+
 ## Working changes review and installer refresh — October 21, 2026
 
 - Added unified and side-by-side code previews for local staged and unstaged changes, with original line numbers, syntax colors, search, and change navigation.
