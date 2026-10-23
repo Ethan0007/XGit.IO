@@ -1,5 +1,14 @@
 # Changelog
 
+## History and workflow installer update: October 23, 2026
+
+- Review committed changes inline in History with a changed-file list, split or unified diff, line numbers, additions and deletions, and merge-parent selection. Select another commit without leaving History.
+- Keep the History graph connected while resizing. The divider resizes the correct pane and remains draggable after reaching either minimum height. The default History and review proportions remain 4:5.
+- Cancel an active workflow from its run details. Cancellation stops the run's processes and build container, preserves completed jobs, and skips remaining jobs. Owner and authorized administrator checks still apply.
+- Open workspace actions by right-clicking anywhere on its row. Rename workspace changes its display name while retaining its identifier, repository links, and source folders.
+- Synchronize frontend framework and output preferences with the YAML draft. Automatic output detection and editable manual folders remain available. Save, commit, and Publish workflow changes before running.
+- Keep pending stages free of a duration label until they start. Includes the previous pipeline output diagnostics, stage timing, branch menus, publication checks, and deployment approval protection.
+
 ## Pipeline installer update: October 22, 2026
 
 - Add automatic static output detection with an editable manual preference; retain existing workflow output settings.
