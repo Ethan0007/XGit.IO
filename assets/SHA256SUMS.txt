@@ -1,2 +1,2 @@
-6e1874a2aeaa8e6edd9cbb6582ecbb5147a425e3ca5f4669bdc87f5997bbc0ce  XGit-Setup-Windows-x64.exe
-8adffdf21b8c8bd43030c2505e45b7b46283b4fd19f02600ee5448bc404eaf69  XGit-macOS-arm64.dmg
+2c3d7840ca9eafbdfd7689f1fce0513c14927912443d04c5fa6ee1338a9fc15b  XGit-Setup-Windows-x64.exe
+5dba0d7afe25d90c374c7f9224bfe7efbce023ac25af0026b1425e2c53f8caad  XGit-macOS-arm64.dmg
