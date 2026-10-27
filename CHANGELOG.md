@@ -1,5 +1,11 @@
 # Changelog
 
+## Installer update: October 26, 2026
+
+- Fresh Git projects now show the unborn `main` branch immediately, labeled **first commit pending**. It becomes a normal branch after the first commit.
+- Branch creation and publication actions stay unavailable until the initial commit exists, with guidance in the Branches view.
+- Existing repositories and their branches remain unchanged.
+
 ## History and workflow installer update: October 23, 2026
 
 - Review committed changes inline in History with a changed-file list, split or unified diff, line numbers, additions and deletions, and merge-parent selection. Select another commit without leaving History.
